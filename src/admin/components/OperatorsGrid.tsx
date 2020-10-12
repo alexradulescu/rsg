@@ -1,8 +1,6 @@
 import React, { FC } from 'react'
-import styled from '@emotion/styled'
-import { css } from '@emotion/core'
 
-import { ProvidedThemeProps } from 'src/global'
+import { Table, rightAligned } from 'src/global'
 
 import { Operator } from '../interfaces'
 import { OperatorStatus } from '../enums'
@@ -47,12 +45,3 @@ export const OperatorsGrid: FC<Props> = ({ operators, onOperatorSelect }) => {
 }
 
 OperatorsGrid.displayName = 'OperatorsGrid'
-
-const Table = styled.table<ProvidedThemeProps>`
-  width: 100%;
-  margin: ${({ theme }) => theme.layout.margin.regular} 0;
-`
-
-const rightAligned = css`
-  text-align: right;
-`

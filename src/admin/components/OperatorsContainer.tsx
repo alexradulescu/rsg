@@ -1,7 +1,6 @@
 import React, { FC, useState } from 'react'
-import styled from '@emotion/styled'
 
-import { ProvidedThemeProps, ROLES } from 'src/global'
+import { SpacedRow, ROLES } from 'src/global'
 
 import { OperatorStatus } from '../enums'
 import { Operator } from '../interfaces'
@@ -99,10 +98,3 @@ export const OperatorsContainer: FC = () => {
 }
 
 OperatorsContainer.displayName = 'OperatorsContainer'
-
-const SpacedRow = styled.div<ProvidedThemeProps>`
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin: ${({ theme }) => theme.layout.margin.regular} 0;
-`

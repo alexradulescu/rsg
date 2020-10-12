@@ -1,8 +1,10 @@
 import React, { FC, useState } from 'react'
 
+import { SpacedRow } from 'src/global'
+
 import { Role } from '../interfaces'
 import { ROLES_MOCK_DATA } from '../mockData'
-import { RoleModal } from './RoleModal'
+import { RoleForm } from './RoleForm'
 import { RolesGrid } from './RolesGrid'
 
 export const RolesContainer: FC = () => {
@@ -14,7 +16,7 @@ export const RolesContainer: FC = () => {
     setSelectedRole(role)
   }
 
-  const openAddRoleModal = () => {
+  const openAddRoleForm = () => {
     setSelectedRole({
       id: '',
       label: '',
@@ -40,22 +42,8 @@ export const RolesContainer: FC = () => {
     }
   }
 
-  const togglePermission = (permissionId: string) => {
-    if (selectedRole) {
-      const updatedPermissions = selectedRole.permissions.map(permission =>
-        permission.id === permissionId
-          ? {
-              ...permission,
-              active: !permission.active,
-            }
-          : permission
-      )
-
-      setSelectedRole({
-        ...selectedRole,
-        permissions: updatedPermissions,
-      })
-    }
+  const onRoleDelete = (roleId: string) => {
+    console.info(`DELETE role with id: ${roleId}`)
   }
 
   const onRequestClose = () => {
@@ -69,26 +57,25 @@ export const RolesContainer: FC = () => {
 
   return (
     <>
-      <div>
+      <SpacedRow>
         <input
           type='search'
           onChange={e => setSearchFilter(e.target.value)}
           value={searchFilter}
           placeholder='Search'
         />
-        <button onClick={openAddRoleModal}>Add Role</button>
-      </div>
+        <button onClick={openAddRoleForm}>Add Role</button>
+      </SpacedRow>
 
-      <RolesGrid roles={ROLES_MOCK_DATA} onRoleSelect={onRoleSelect} />
+      <RolesGrid roles={ROLES_MOCK_DATA} onRoleSelect={onRoleSelect} onRoleDelete={onRoleDelete} />
 
       {selectedRole && (
-        <RoleModal
+        <RoleForm
           role={selectedRole}
           onLabelChange={onLabelChange}
           onDescriptionChange={onDescriptionChange}
           onRequestClose={onRequestClose}
           onAddOrUpdateRole={onAddOrUpdateRole}
-          togglePermission={togglePermission}
         />
       )}
     </>
