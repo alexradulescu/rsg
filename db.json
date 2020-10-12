@@ -1,11 +1,74 @@
 {
-  "posts": [
+  "roles": [
     {
-      "id": 1,
-      "title": "hello"
+      "id": "a01",
+      "key": "master",
+      "label": "Master",
+      "description": "The top of the top"
+    },
+    {
+      "id": "b01",
+      "key": "wizard",
+      "label": "Wizard",
+      "description": "The ones doing most of the magic"
+    },
+
+    {
+      "id": "c01",
+      "key": "apprentice",
+      "label": "Apprentice",
+      "description": "The other ones doing magic"
+    },
+
+    {
+      "id": "d01",
+      "key": "novice",
+      "label": "Novice",
+      "description": "The magic working bees"
+    },
+
+    {
+      "id": "e01",
+      "key": "muggle",
+      "label": "Muggle",
+      "description": "Non-wizards"
     }
   ],
-  "profile": {
-    "name": "typicode"
-  }
+  "users": [
+    {
+      "id": "a01",
+      "name": "Maria Merkel",
+      "email": "maria.merkel@email.com",
+      "role": "master",
+      "status": "active"
+    },
+    {
+      "id": "a02",
+      "name": "Andrew James",
+      "email": "andrew.james@email.com",
+      "role": "wizard",
+      "status": "active"
+    },
+    {
+      "id": "a03",
+      "name": "Olivia Johanson",
+      "email": "olivia.johanson@email.com",
+      "role": "apprentice",
+      "status": "active"
+    },
+    {
+      "id": "a04",
+      "name": "John Chang",
+      "email": "john.chang@email.com",
+      "role": "novice",
+      "status": "active"
+    },
+    {
+      "id": "a05",
+      "name": "Alexa Dones",
+      "email": "alexa.dones@email.com",
+      "role": "muggle",
+      "status": "active"
+    }
+  ]
 }
