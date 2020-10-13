@@ -8,11 +8,13 @@
     "@emotion/core": "10.0.35",
     "@emotion/styled": "10.0.27",
     "@types/react-helmet": "6.1.0",
+    "@types/react-query": "1.1.2",
     "emotion": "10.0.27",
     "emotion-theming": "10.0.27",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-helmet": "6.1.0",
+    "react-query": "2.23.1",
     "react-router-dom": "5.2.0",
     "react-scripts": "3.4.3",
     "recoil": "0.0.13"
