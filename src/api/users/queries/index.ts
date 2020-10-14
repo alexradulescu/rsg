@@ -1,2 +1,2 @@
-export * from './rolesQuery'
+export * from './levelsQuery'
 export * from './usersQuery'

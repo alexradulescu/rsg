@@ -1,4 +1,4 @@
 export const apiSettings = {
-  usersHttpUrl: '',
-  levelsHttpUrl: '',
+  usersHttpUrl: 'https://my-json-server.typicode.com/alexradulescu/rsg/users',
+  levelsHttpUrl: 'https://my-json-server.typicode.com/alexradulescu/rsg/levels',
 }
