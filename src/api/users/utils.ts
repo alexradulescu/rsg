@@ -1,14 +1,13 @@
 import { ApiUser, User } from './interfaces'
-import { OperatorStatus } from './enums'
+import { UserStatus } from './enums'
 
 export function formatUserData(userApiData: ApiUser[]): User[] {
-  return userApiData
-  // .map(({id, name, email, age, role, status }) => ({
-  //   id,
-  // name,
-  // email,
-  // age: Number(age),
-  // role: ROLES
-  // status: OperatorStatus
-  // }))
+  return userApiData.map(({ id, name, email, age, level, status }: ApiUser) => ({
+    id,
+    name,
+    email,
+    level,
+    age: Number(age),
+    status: status as UserStatus,
+  }))
 }

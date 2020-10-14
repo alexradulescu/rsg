@@ -12,13 +12,13 @@ export const ROUTES: { [key: string]: RouteItem } = {
     url: '/',
     title: 'Home',
   },
-  adminOperators: {
-    url: '/admin',
-    title: 'Operators',
+  users: {
+    url: '/users',
+    title: 'Users',
   },
-  adminRoles: {
-    url: '/admin/roles',
-    title: 'Roles',
+  levels: {
+    url: '/users/level',
+    title: 'Levels',
   },
 }
 

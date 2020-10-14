@@ -6,15 +6,15 @@ import { ROUTES } from '../constants'
 
 const GLOBAL_MENU_ITEMS = [
   {
-    dataTestSelector: 'AdminMenuItem-AdminLink',
+    dataTestSelector: 'MainMenuItem-HomeLink',
     title: ROUTES.home.title,
     to: ROUTES.home.url,
     exact: true,
   },
   {
-    dataTestSelector: 'AdminMenuItem-AdminLink',
-    title: ROUTES.adminOperators.title,
-    to: ROUTES.adminOperators.url,
+    dataTestSelector: 'MainMenuItem-UsersLink',
+    title: ROUTES.users.title,
+    to: ROUTES.users.url,
   },
 ]
 

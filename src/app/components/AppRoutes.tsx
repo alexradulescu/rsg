@@ -8,8 +8,8 @@ import { ROUTES, usePermission } from 'src/global'
  */
 const LoginPage = lazy(() => import('src/auth/pages/LoginPage'))
 
-const OperatorsAdminPage = lazy(() => import('src/admin/pages/OperatorsAdminPage'))
-const RolesAdminPage = lazy(() => import('src/admin/pages/RolesAdminPage'))
+const UsersPage = lazy(() => import('src/users/pages/UsersPage'))
+const LevelsPage = lazy(() => import('src/users/pages/LevelsPage'))
 
 const HomePage = lazy(() => import('../pages/HomePage'))
 const NotFoundPage = lazy(() => import('../pages/NotFoundPage'))
@@ -34,14 +34,14 @@ export const AppRoutes: FC = memo(() => {
         {/* 
           NOTE: Certain pages and features will only be available if the user has the right permission.
         */}
-        {isPermitted('OperatorsAdminPage:View') && (
-          <Route exact={true} path={ROUTES.adminOperators.url}>
-            <OperatorsAdminPage />
+        {isPermitted('UsersPage:View') && (
+          <Route exact={true} path={ROUTES.users.url}>
+            <UsersPage />
           </Route>
         )}
-        {isPermitted('RolesAdminPage:View') && (
-          <Route exact={true} path={ROUTES.adminRoles.url}>
-            <RolesAdminPage />
+        {isPermitted('LevelsPage:View') && (
+          <Route exact={true} path={ROUTES.levels.url}>
+            <LevelsPage />
           </Route>
         )}
 

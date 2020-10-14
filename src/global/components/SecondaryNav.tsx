@@ -17,7 +17,13 @@ export const SecondaryNav: React.FC<Props> = ({ menuItems }) => {
   return (
     <nav>
       {menuItems.map(item => (
-        <NavLink to={item.to} exact={item.exact} data-test-selector={item.dataTestSelector} key={item.to}>
+        <NavLink
+          to={item.to}
+          exact={item.exact}
+          data-test-selector={item.dataTestSelector}
+          key={item.to}
+          activeStyle={{ color: 'var(--white)', backgroundColor: 'var(--blue)' }}
+        >
           {item.title}
         </NavLink>
       ))}

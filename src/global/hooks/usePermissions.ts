@@ -8,26 +8,8 @@ export enum ROLES {
 }
 
 export const PERMISSIONS = {
-  [ROLES.USER]: [
-    'CustomersGridPage:View',
-    'CustomerPage:View',
-    'CompaniesGridPage:View',
-    'CompanyPage:View',
-    'ExchangePage:View',
-    'CustodyPage:View',
-  ],
-  [ROLES.ADMIN]: [
-    'CustomersGridPage:View',
-    'CustomerPage:View',
-    'CompaniesGridPage:View',
-    'CompanyPage:View',
-    'ExchangePage:View',
-    'CustodyPage:View',
-    'AdminPage:View',
-    'OperatorsAdminPage:View',
-    'RolesAdminPage:View',
-    'PermissionsAdminPage:View',
-  ],
+  [ROLES.USER]: [],
+  [ROLES.ADMIN]: ['UsersPage:View', 'LevelsPage:View'],
 }
 
 export const usePermission = () => {
