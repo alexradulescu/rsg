@@ -13,8 +13,8 @@
 
     {
       "id": "c01",
-      "label": "Warlock",
-      "value": "warlock"
+      "label": "Novice",
+      "value": "novice"
     },
 
     {
@@ -33,56 +33,40 @@
   "users": [
     {
       "id": "a01",
-      "name": "Di Wu",
-      "email": "di.wu@block.one",
-      "level": "apprentice",
-      "age": "20",
+      "name": "Diane Dieter",
+      "email": "d.dieter@email.com",
+      "level": "superwizard",
+      "age": "22",
       "status": "active"
     },
     {
       "id": "a02",
-      "name": "Andrew Tran",
-      "email": "andrew.tran@block.one",
-      "level": "apprentice",
-      "age": "20",
-      "status": "active"
+      "name": "Andrew Anderson",
+      "email": "a.anderson@email.com",
+      "level": "novice",
+      "age": "25",
+      "status": "disabled"
     },
     {
       "id": "a03",
-      "name": "Dominic Tobias",
-      "email": "dominic.tobias@block.one",
-      "level": "apprentice",
-      "age": "20",
+      "name": "Mark Mathew",
+      "email": "m.mathew@email.com",
+      "level": "Wizard",
+      "age": "27",
       "status": "active"
     },
     {
       "id": "a04",
-      "name": "Pak Kian Lew",
-      "email": "pak-kian.lew@block.one",
-      "level": "apprentice",
+      "name": "Andreea Antoni",
+      "email": "a.antoni@email.com",
+      "level": "novice",
       "age": "20",
       "status": "active"
     },
     {
       "id": "a05",
-      "name": "Mariah Bragg",
-      "email": "mariah.bragg@block.one",
-      "level": "apprentice",
-      "age": "20",
-      "status": "disabled"
-    },
-    {
-      "id": "a06",
-      "name": "Tara Tritt",
-      "email": "tara.tritt@block.one",
-      "level": "apprentice",
-      "age": "20",
-      "status": "disabled"
-    },
-    {
-      "id": "a07",
-      "name": "Alex Radulescu",
-      "email": "alex.radulescu@block.one",
+      "name": "Helena Hilview",
+      "email": "h.hilview@email.com",
       "level": "apprentice",
       "age": "20",
       "status": "disabled"

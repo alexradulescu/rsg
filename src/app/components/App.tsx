@@ -23,11 +23,7 @@ export const AppInner: FC = () => {
     })
   })
 
-  return (
-    <AppContainer>
-      <AppRoutes />
-    </AppContainer>
-  )
+  return <AppRoutes />
 }
 export const App: FC = () => {
   /**
@@ -51,15 +47,3 @@ export const App: FC = () => {
 }
 
 App.displayName = 'App'
-
-/**
- * NOTE: For styling we always use styles components.
- * Plase do NOT inline css ever like: <div style={{"some-property": "some-value"; anotherProperty: "another-value"}} .../>
- */
-const AppContainer = styled.main<ProvidedThemeProps>`
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  overflow-y: hidden;
-  flex-direction: column;
-`

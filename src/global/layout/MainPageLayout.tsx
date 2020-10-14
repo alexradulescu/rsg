@@ -1,5 +1,4 @@
 import React, { ReactNode } from 'react'
-import styled from '@emotion/styled'
 
 import { SecondaryNav, TopBar, MainFooter } from '../components'
 import { ROUTES } from '../constants'
@@ -30,14 +29,10 @@ export const MainPageLayout: React.FC<Props> = ({ topBarContentLeft, footerConte
         topBarContentRight={topBarContentLeft}
         topBarContentLeft={<SecondaryNav menuItems={GLOBAL_MENU_ITEMS} />}
       />
-      <Main>{children}</Main>
+      <main>{children}</main>
       <MainFooter />
     </>
   )
 }
 
 MainPageLayout.displayName = 'MainPageLayout'
-
-const Main = styled.div`
-  overflow: auto;
-`
