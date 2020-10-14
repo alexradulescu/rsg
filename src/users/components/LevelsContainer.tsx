@@ -1,18 +1,19 @@
 import React, { FC, useState } from 'react'
 
 import { SpacedRow } from 'src/global'
-import { Level } from 'src/api'
+import { Level, useLevelsQuery } from 'src/api'
 
-import { LEVELS_MOCK_DATA } from '../mockData'
 import { LevelForm } from './LevelForm'
 import { LevelsGrid } from './LevelsGrid'
 
 export const LevelsContainer: FC = () => {
+  const { data, loading, error } = useLevelsQuery()
+
   const [selectedLevel, setSelectedLevel] = useState<Level | null>()
   const [searchFilter, setSearchFilter] = useState('')
 
   const onLevelSelect = (item: Level) => {
-    const level = LEVELS_MOCK_DATA.find((level: Level) => level.id === item.id)
+    const level = data.find((level: Level) => level.id === item.id)
     setSelectedLevel(level)
   }
 
@@ -58,16 +59,21 @@ export const LevelsContainer: FC = () => {
         />
         <button onClick={openAddLevelForm}>Add Level</button>
       </SpacedRow>
+      {loading && <h4>Loading...</h4>}
+      {error && <h4>Error...</h4>}
+      {!loading && data && (
+        <>
+          <LevelsGrid levels={data} onLevelSelect={onLevelSelect} onLevelDelete={onLevelDelete} />
 
-      <LevelsGrid levels={LEVELS_MOCK_DATA} onLevelSelect={onLevelSelect} onLevelDelete={onLevelDelete} />
-
-      {selectedLevel && (
-        <LevelForm
-          level={selectedLevel}
-          onLabelChange={onLabelChange}
-          onRequestClose={onRequestClose}
-          onAddOrUpdateLevel={onAddOrUpdateLevel}
-        />
+          {selectedLevel && (
+            <LevelForm
+              level={selectedLevel}
+              onLabelChange={onLabelChange}
+              onRequestClose={onRequestClose}
+              onAddOrUpdateLevel={onAddOrUpdateLevel}
+            />
+          )}
+        </>
       )}
     </>
   )

@@ -1,18 +1,19 @@
 import React, { FC, useState } from 'react'
 
 import { SpacedRow, ROLES } from 'src/global'
-import { UserStatus, User } from 'src/api'
+import { UserStatus, User, useUsersQuery } from 'src/api'
 
-import { OPERATORS_MOCK_DATA } from '../mockData'
 import { UsersGrid } from './UsersGrid'
 import { UserForm } from './UserForm'
 
 export const UsersContainer: FC = () => {
+  const { data, loading, error } = useUsersQuery()
+
   const [selectedUser, setSelectedUser] = useState<User | null>()
   const [searchFilter, setSearchFilter] = useState('')
 
   const onUserSelect = (item: User) => {
-    const user = OPERATORS_MOCK_DATA.find((user: User) => user.id === item.id)
+    const user = data.find((user: User) => user.id === item.id)
     setSelectedUser(user)
   }
 
@@ -80,18 +81,24 @@ export const UsersContainer: FC = () => {
         <button onClick={openAddUserForm}>Add User</button>
       </SpacedRow>
 
-      <UsersGrid users={OPERATORS_MOCK_DATA} onUserSelect={onUserSelect} />
+      {loading && <h4>Loading...</h4>}
+      {error && <h4>Error...</h4>}
+      {!loading && data && (
+        <>
+          <UsersGrid users={data} onUserSelect={onUserSelect} />
 
-      {selectedUser && (
-        <UserForm
-          user={selectedUser}
-          onNameChange={onNameChange}
-          onEmailChange={onEmailChange}
-          onStatusChange={onStatusChange}
-          onLevelChange={onLevelChange}
-          onRequestClose={onRequestClose}
-          onAddOrUpdateUser={onAddOrUpdateUser}
-        />
+          {selectedUser && (
+            <UserForm
+              user={selectedUser}
+              onNameChange={onNameChange}
+              onEmailChange={onEmailChange}
+              onStatusChange={onStatusChange}
+              onLevelChange={onLevelChange}
+              onRequestClose={onRequestClose}
+              onAddOrUpdateUser={onAddOrUpdateUser}
+            />
+          )}
+        </>
       )}
     </>
   )
