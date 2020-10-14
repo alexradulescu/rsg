@@ -2,7 +2,7 @@ import React from 'react'
 import { useHistory } from 'react-router-dom'
 import { useSetRecoilState } from 'recoil'
 
-import { ROUTES, userPermissionsState, ROLES, PERMISSIONS } from 'src/global'
+import { ROUTES, userPermissionsState, ROLES, PERMISSIONS, CenterWrapper } from 'src/global'
 
 import { authUserState } from '../state'
 
@@ -24,11 +24,18 @@ export const LoginContainer: React.FC = () => {
   }
 
   return (
-    <aside>
-      <button onClick={handleDemoOperator}>Login as User</button>
-      <button type='submit' onClick={handleDemoAdmin}>
-        Login as Admin
-      </button>
-    </aside>
+    <CenterWrapper>
+      <h2>You're not logged in</h2>
+      <p>As this is a demo, just pick one of these. Preferably Admin ;-)</p>
+
+      <div>
+        <button type='submit' onClick={handleDemoAdmin}>
+          Login as Admin
+        </button>{' '}
+        <button onClick={handleDemoOperator}>Login as User</button>
+      </div>
+    </CenterWrapper>
   )
 }
+
+LoginContainer.displayName = 'LoginContainer'

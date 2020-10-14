@@ -1,18 +1,24 @@
 import React, { ReactNode } from 'react'
-import { useRecoilValue } from 'recoil'
-import { Link } from 'react-router-dom'
+import { useRecoilState, useRecoilValue } from 'recoil'
+import { useHistory } from 'react-router'
 
 import { authUserState } from 'src/auth'
 
 import { ROUTES } from '../constants'
 
 export const MainFooter: React.FC = () => {
-  const user = useRecoilValue(authUserState)
+  const [user, setUser] = useRecoilState(authUserState)
+  const history = useHistory()
+
+  const logout = () => {
+    setUser('')
+    history.push(ROUTES.login.url)
+  }
 
   return (
     <footer>
       <samp>{user}</samp>
-      <Link to={ROUTES.login.url}>Log Out</Link>
+      <button onClick={logout}>Log Out</button>
     </footer>
   )
 }

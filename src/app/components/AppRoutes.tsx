@@ -1,7 +1,9 @@
 import React, { Suspense, lazy, memo, FC } from 'react'
+import { useRecoilValue } from 'recoil'
 import { Route, Switch } from 'react-router'
 
 import { ROUTES, usePermission } from 'src/global'
+import { authUserState } from 'src/auth'
 
 /**
  * NOTE: Lazy loading the individual pages for faster loading and smaller bundles
@@ -20,6 +22,7 @@ const NotFoundPage = lazy(() => import('../pages/NotFoundPage'))
 
 export const AppRoutes: FC = memo(() => {
   const { isPermitted } = usePermission()
+  const user = useRecoilValue(authUserState)
 
   return (
     <Suspense fallback={<h5>Loading...</h5>}>
@@ -27,9 +30,11 @@ export const AppRoutes: FC = memo(() => {
         <Route path={ROUTES.login.url}>
           <LoginPage />
         </Route>
-        <Route exact={true} path={ROUTES.home.url}>
-          <HomePage />
-        </Route>
+        {user && (
+          <Route exact={true} path={ROUTES.home.url}>
+            <HomePage />
+          </Route>
+        )}
 
         {/* 
           NOTE: Certain pages and features will only be available if the user has the right permission.

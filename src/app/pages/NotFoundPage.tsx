@@ -2,7 +2,7 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 import { useHistory } from 'react-router-dom'
 
-import { ROUTES, AuthPageLayout } from 'src/global'
+import { ROUTES, AuthPageLayout, CenterWrapper } from 'src/global'
 
 export const LoginPage: React.FC = () => {
   const history = useHistory()
@@ -18,13 +18,15 @@ export const LoginPage: React.FC = () => {
   return (
     <AuthPageLayout>
       <Helmet title='Not Found' />
-      <div>
+      <CenterWrapper>
         <h3>The page you are looking could not be found</h3>
-        <aside>
-          <button onClick={redirectToLogin}>Go to Login</button>
+        <div>
+          <button type='submit' onClick={redirectToLogin}>
+            Go to Login
+          </button>{' '}
           <button onClick={redirectHome}>Go Home</button>
-        </aside>
-      </div>
+        </div>
+      </CenterWrapper>
     </AuthPageLayout>
   )
 }

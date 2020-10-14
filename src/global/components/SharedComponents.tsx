@@ -16,3 +16,11 @@ export const Table = styled.table<ProvidedThemeProps>`
 export const RightAligned = styled.div`
   text-align: right;
 `
+export const CenterWrapper = styled.div`
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`
