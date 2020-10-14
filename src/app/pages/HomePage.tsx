@@ -26,6 +26,25 @@ export const HomePage: React.FC = () => {
         component, enum and interface. It is not that much.
       </p>
       <p>You will find some notes along the way also.</p>
+      <p>Last but not least, some of the packages and tool we are using(non-optional)</p>
+      <ul>
+        <li>
+          <a href='https://create-react-app.dev/docs/adding-typescript/' target='blank'>
+            React + TS (based on CRA)
+          </a>
+        </li>
+        <li>
+          <a href='https://react-query.tanstack.com/' target='blank'>
+            React-Query
+          </a>
+        </li>
+        <li>
+          <a href='https://recoiljs.org/' target='blank'>
+            Recoil
+          </a>
+        </li>
+        <li>Prettier + ESLint(check out README.md and .vscode folder for recommended extensions)</li>
+      </ul>
     </MainPageLayout>
   )
 }
