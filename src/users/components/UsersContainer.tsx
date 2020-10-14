@@ -1,13 +1,14 @@
 import React, { FC, useState } from 'react'
 
 import { SpacedRow, ROLES } from 'src/global'
-import { UserStatus, User, useUsersQuery } from 'src/api'
+import { UserStatus, User, useUsersQuery, useLevelsQuery } from 'src/api'
 
 import { UsersGrid } from './UsersGrid'
 import { UserForm } from './UserForm'
 
 export const UsersContainer: FC = () => {
   const { data, loading, error } = useUsersQuery()
+  const { data: levels, loading: levelsLoading, error: levelsError } = useLevelsQuery()
 
   const [selectedUser, setSelectedUser] = useState<User | null>()
   const [searchFilter, setSearchFilter] = useState('')
@@ -87,9 +88,10 @@ export const UsersContainer: FC = () => {
         <>
           <UsersGrid users={data} onUserSelect={onUserSelect} />
 
-          {selectedUser && (
+          {selectedUser && levels && (
             <UserForm
               user={selectedUser}
+              levels={levels}
               onNameChange={onNameChange}
               onEmailChange={onEmailChange}
               onStatusChange={onStatusChange}

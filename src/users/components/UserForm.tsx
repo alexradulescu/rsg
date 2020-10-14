@@ -1,9 +1,10 @@
 import React, { FC } from 'react'
 
-import { User } from 'src/api'
+import { User, Level } from 'src/api'
 
 interface Props {
   user: User
+  levels: Level[]
   onNameChange: (name: string) => void
   onEmailChange: (email: string) => void
   onStatusChange: (status: string | number) => void
@@ -14,6 +15,7 @@ interface Props {
 
 export const UserForm: FC<Props> = ({
   user,
+  levels,
   onNameChange,
   onEmailChange,
   onStatusChange,
@@ -46,6 +48,11 @@ export const UserForm: FC<Props> = ({
         <label>
           Level
           <select value={user.level} onChange={e => onLevelChange(e.target.value)}>
+            {levels.map(({ id, value, label }: Level) => (
+              <option value={value} key={id}>
+                {label}
+              </option>
+            ))}
             <option value='admin'>Admin</option>
             <option value='user'>User</option>
           </select>
