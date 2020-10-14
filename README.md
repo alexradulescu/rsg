@@ -12,6 +12,14 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
 
+## Prettier
+
+We use [Prettier](https://prettier.io/) for code formatting. To set it up:
+
+- `yarn global add prettier`
+- Tick 'Format on Save' option in VSCode settings
+- Install `vscode-styled-components` plugin in VSCode
+
 ### `yarn test`
 
 Launches the test runner in the interactive watch mode.<br />
