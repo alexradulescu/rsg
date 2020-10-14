@@ -16,7 +16,11 @@ export const HomePage: React.FC = () => {
         complex cases won't be that bad in fact.
       </p>
       <p>
-        Still, if one encounters any challenges always discuss with colleagues. Don't just hammer through if
+        The styling comes from a small css boilerplate(feel free to ignore it). We do not use Bootstrap but
+        rather use a custom, private UI library which we'll provide later on.
+      </p>
+      <p>
+        If one encounters any challenges always discuss with colleagues. Don't just hammer through if
         something is not elegant and feel bad.
       </p>
       <p>Because in the end, bad code, always comes back and bites us ;-).</p>
