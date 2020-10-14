@@ -1,4 +1,4 @@
-export enum OperatorStatus {
+export enum UserStatus {
   ACTIVE = 'active',
   DISABLED = 'disabled',
 }

@@ -3,17 +3,17 @@ import { Helmet } from 'react-helmet'
 
 import { SecondaryNav, ROUTES, MainPageLayout } from 'src/global'
 
-const ADMIN_MENU_ITEMS = [
+const USER_MENU_ITEMS = [
   {
     dataTestSelector: 'AdminMenuItem-AdminLink',
-    title: ROUTES.adminOperators.title,
-    to: ROUTES.adminOperators.url,
+    title: ROUTES.users.title,
+    to: ROUTES.users.url,
     exact: true,
   },
   {
     dataTestSelector: 'AdminMenuItem-AdminLink',
-    title: ROUTES.adminRoles.title,
-    to: ROUTES.adminRoles.url,
+    title: ROUTES.levels.title,
+    to: ROUTES.levels.url,
   },
 ]
 
@@ -22,15 +22,15 @@ interface Props {
   children: ReactNode
 }
 
-export const AdminPageLayout: FC<Props> = ({ helmetTitle = 'Admin', children }) => {
+export const UsersPageLayout: FC<Props> = ({ helmetTitle = 'Users', children }) => {
   return (
-    <MainPageLayout topBarContentLeft={<h3>Admin</h3>}>
+    <MainPageLayout topBarContentLeft={<h3>Users</h3>}>
       <Helmet title={helmetTitle} />
-      <SecondaryNav menuItems={ADMIN_MENU_ITEMS} />
+      <SecondaryNav menuItems={USER_MENU_ITEMS} />
 
       {children}
     </MainPageLayout>
   )
 }
 
-AdminPageLayout.displayName = 'AdminPageLayout'
+UsersPageLayout.displayName = 'UsersPageLayout'
