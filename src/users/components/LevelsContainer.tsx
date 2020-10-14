@@ -1,8 +1,8 @@
 import React, { FC, useState } from 'react'
 
 import { SpacedRow } from 'src/global'
+import { Level } from 'src/api'
 
-import { Level } from '../interfaces'
 import { LEVELS_MOCK_DATA } from '../mockData'
 import { LevelForm } from './LevelForm'
 import { LevelsGrid } from './LevelsGrid'

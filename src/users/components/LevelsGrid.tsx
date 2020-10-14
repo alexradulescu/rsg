@@ -1,8 +1,7 @@
 import React, { FC } from 'react'
 
 import { Table, RightAligned } from 'src/global'
-
-import { Level } from '../interfaces'
+import { Level } from 'src/api'
 
 interface Props {
   levels: Level[]

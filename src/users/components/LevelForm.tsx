@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 
-import { Level } from '../interfaces'
+import { Level } from 'src/api'
 
 interface Props {
   level: Level

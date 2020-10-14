@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 
-import { User } from '../interfaces'
+import { User } from 'src/api'
 
 interface Props {
   user: User

@@ -1,9 +1,7 @@
 import React, { FC } from 'react'
 
 import { Table, RightAligned } from 'src/global'
-
-import { User } from '../interfaces'
-import { UserStatus } from '../enums'
+import { User, UserStatus } from 'src/api'
 
 interface Props {
   users: User[]

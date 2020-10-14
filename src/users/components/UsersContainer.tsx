@@ -1,9 +1,8 @@
 import React, { FC, useState } from 'react'
 
 import { SpacedRow, ROLES } from 'src/global'
+import { UserStatus, User } from 'src/api'
 
-import { UserStatus } from '../enums'
-import { User } from '../interfaces'
 import { OPERATORS_MOCK_DATA } from '../mockData'
 import { UsersGrid } from './UsersGrid'
 import { UserForm } from './UserForm'
