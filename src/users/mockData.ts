@@ -1,5 +1,4 @@
-import { UserStatus } from './enums'
-import { Level, User } from './interfaces'
+import { UserStatus, Level, User } from 'src/api'
 
 export const LEVELS_MOCK_DATA: Level[] = [
   {
